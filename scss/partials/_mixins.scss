@@ -8,6 +8,11 @@
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
   &:hover {
     background-color: rgba(#000000, 0.4);
   }

@@ -14,6 +14,48 @@
   margin: 0 auto;
 }
 
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40%,
+  43% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  75% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40%,
+  43% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  75% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+.bounce {
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -35,6 +77,7 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.banner .overlay,
 .banner #video_background {
   position: absolute;
   left: 0;
@@ -43,7 +86,19 @@ body {
   top: 0;
   min-width: 100%;
   min-height: 100%;
+}
+.banner #video_background {
   z-index: -150;
+}
+.banner .overlay {
+  background: url(../images/initial_banner_bg.jpg) no-repeat center center;
+  background-size: cover;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+  will-change: opacity;
+  -webkit-transition: opacity 3s ease-out;
+  transition: opacity 3s ease-out;
+  z-index: -100;
 }
 .banner .top_header {
   float: right;
@@ -59,6 +114,9 @@ body {
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.banner .top_header nav > a:focus, .banner .top_header nav > a:active {
+  outline: 0;
 }
 .banner .top_header nav > a:hover {
   background-color: rgba(0, 0, 0, 0.4);
@@ -100,6 +158,9 @@ body {
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.banner .top_header ul li.active a:focus, .banner .top_header ul li.active a:active {
+  outline: 0;
 }
 .banner .top_header ul li.active a:hover {
   background-color: rgba(0, 0, 0, 0.4);
